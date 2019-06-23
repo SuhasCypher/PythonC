@@ -1,0 +1,10 @@
+import webbrowser
+import sys
+import bs4
+import requests
+
+q = input("enter the query:")
+r = requests.get('http://www.google.com/search?q=%s '%q)
+s = bs4.BeautifulSoup(r.text, 'lxml')
+
+webbrowser.open_new('http://www.google.com/search?q=%s '%q)
